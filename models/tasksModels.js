@@ -4,7 +4,6 @@ const moment = require('moment');
 const taskSchema = new mongoose.Schema({
     action: {
         type: String,
-        required: true,
     },
 
     date: {

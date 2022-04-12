@@ -11,15 +11,15 @@ async function getTasks(req, res) {
 }
 
 async function createTask(req, res) {
-    // if (req.body.action) {
+    if (req.body.action) {
         const newTask = await taskModel.create({
             action: req.body.action,
         })
         console.log(newTask)
         res.redirect('/tasks')
     } 
-    //res.end();
-//}
+    res.redirect('/tasks');
+}
 
 async function getOneTask(req, res) {
     const task = await taskModel.find({_id : req.params.id})
@@ -47,8 +47,11 @@ function deleteOneTask(req, res) {
     const task = taskModel.find({_id : taskID})
    
     if (task) {
-        taskModel.deleteOne({_id : taskID})
-        return res.redirect('/tasks');
+        taskModel.deleteOne( {_id: taskID}, function(error){
+            if (error) console.log(error);
+            return res.send(error);
+        })  
+        return res.redirect("/tasks");
     } return res.send(`The task with ${taskID} doesn't exist`)
 }
 
