@@ -23,10 +23,16 @@
         <button type="submit" name="button" class="submitBtn"> Add task </button>
     </form>
     <div class="taskListContainer">
+        <ul>
+            <li>
+                <form action="tasks/removeAll" method="post" class="rmvAll" >
+                    <button class="rmvAllBtn" formaction="/tasks/removeAll" type="submit">Delete all tasks</button>
+                </form>
+            </li>
             <% for (let i=0; i <tasksArray.length; i++){ %>
                 <li class="taskInline">
                     <span class="action">
-                        <strong><%= tasksArray[i].action%></strong>
+                        <strong name="test"><%= tasksArray[i].action%></strong>
                     </span>
                     <span class="status">
                         <em><%= tasksArray[i].status%></em>
@@ -35,8 +41,8 @@
                       <%= tasksArray[i].date%>
                     </span>
             
-                    <form action="/tasks/remove" method="post" class="rmvBtnDiv">
-                        <button class="removeBtn" formaction="/tasks/remove" type="submit">Delete</button>
+                    <form action="tasks/remove/<%= tasksArray[i]._id %>" method="post" class="rmvBtnDiv" >
+                        <button class="removeBtn" formaction="/tasks/remove/<%= tasksArray[i]._id %>"  name="delete" value="<%= tasksArray[i]._id %>" type="submit">Delete</button>
                     </form>
                 </li>
             <% } %>     
