@@ -42,7 +42,7 @@
                     </span>
             
                     <form action="tasks/remove/<%= tasksArray[i]._id %>" method="post" class="rmvBtnDiv" >
-                        <button class="removeBtn" formaction="/tasks/remove/<%= tasksArray[i]._id %>"  name="delete" value="<%= tasksArray[i]._id %>" type="submit">Delete</button>
+                        <button class="removeBtn" name="delete" value="<%= tasksArray[i]._id %>" type="submit">Delete</button>
                     </form>
                 </li>
             <% } %>     
