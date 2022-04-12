@@ -43,14 +43,11 @@ function deleteAll(req,res){
 
 function deleteOneTask(req, res) {
     const taskID = req.params.id
-    console.log(taskID)
+    console.log(taskID);
     const task = taskModel.find({_id : taskID})
    
     if (task) {
-        taskModel.deleteOne( {_id: taskID}, function(error){
-            if (error) console.log(error);
-            return res.send(error);
-        })  
+        taskModel.deleteOne( {_id: taskID})
         return res.redirect("/tasks");
     } return res.send(`The task with ${taskID} doesn't exist`)
 }
