@@ -24,11 +24,7 @@
     </form>
     <div class="taskListContainer">
         <ul>
-            <li>
-                <form action="tasks/removeAll" method="post" class="rmvAll" >
-                    <button class="rmvAllBtn" formaction="/tasks/removeAll" type="submit">Delete all tasks</button>
-                </form>
-            </li>
+            
             <% for (let i=0; i <tasksArray.length; i++){ %>
                 <li class="taskInline">
                     <span class="action">
@@ -46,6 +42,11 @@
                     </form>
                 </li>
             <% } %>     
+            <li>
+                <form action="tasks/removeAll" method="post" class="rmvAll" >
+                    <button class="rmvAllBtn" formaction="/tasks/removeAll" type="submit">DELETE ALL TASKS</button>
+                </form>
+            </li>
         </ul>
 
     </div>

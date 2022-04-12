@@ -67,16 +67,11 @@ button {
     text-align: center;
 }
 
-.taskListContainer {
-    display: grid;
-}
-
-
 
 .taskListContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, auto-fit);
-    margin: 2rem 0rem;
+    margin: 2rem 0rem 0 0;
     padding: 0 0.6rem;
     text-align: justify;
     overflow-wrap: break-word;
@@ -118,6 +113,7 @@ button {
 .status {
     /* background-color: #6e9bec; */
     padding: 0 0.2rem;
+    color: #0c924a;
     font-weight: 500;
 }
 
@@ -222,46 +218,42 @@ button {
 
 }
 .rmvAllBtn {
-    text-align: center;
+    border: unset;
+    border-radius: 15px;
+    color: white;
+    z-index: 1;
+    font-weight: 600;
+    background: #f68888cf;
+    position: relative;
+    font-size: 10px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    padding: 0.7rem;
 }
 
-/* .removeBtn {
-    padding: 0.2rem;
-    margin: 0 0.1rem;
-    border: 2em;
-    cursor: pointer;
-    outline: none;
-    font-size: 12px;
-    -webkit-transform: translate(0);
-    transform: translate(0);
-    background-image: linear-gradient(45deg, #4568dc, rgb(61, 13, 183));
-    padding: 0.7em 1em;
-    border-radius: 65px;
-    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
-    -webkit-transition: box-shadow 0.25s;
-    transition: box-shadow 0.25s;
-    color: rgb(0, 0, 0);
-} */
-/* 
-.removeBtn::after {
+
+.rmvAllBtn::before {
     content: "";
-    border-radius: 10px;
     position: absolute;
-    margin: 4px;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
     z-index: -1;
-    background: aliceblue;
-    ;
-
-}
-
-.removeBtn:hover  {
-background-image: linear-gradient(-45deg, #4568dc, rgb(61, 13, 183));
-}
-
-.rmvBtnDiv {
-    display: flex;
-} */
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    background-color: rgb(255, 255, 255);
+    transition: all 250ms
+   }
+   
+.rmvAllBtn:hover {
+    color: #a90d0d;
+    font-weight: 600;
+   }
+   
+.rmvAllBtn:hover::before {
+    width: 100%;
+   }
