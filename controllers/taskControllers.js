@@ -14,6 +14,7 @@ async function createTask(req, res) {
     if (req.body.action) {
         const newTask = await taskModel.create({
             action: req.body.action,
+            category: req.body.categoryChoice
         })
         console.log(newTask)
         return res.redirect('/tasks')

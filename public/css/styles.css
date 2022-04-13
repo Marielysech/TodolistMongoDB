@@ -16,6 +16,7 @@ strong {
 
 }
 
+
 h1,h2 {
     text-align: center;
     margin: 2rem 1rem 0 1rem;
@@ -43,11 +44,19 @@ input {
     border-radius: 10px;
     border: none;
     padding: 0.3rem;
-    width: 60%;
+    width: 50%;
     margin-top: 2rem;
     height: 25px;
-    border: 3px solid rgba(32, 13, 118, 0.561);
+    border: 2px solid rgba(32, 13, 118, 0.561);
 }
+
+.category {
+    width: 12%;
+    margin: 0 0.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.505);
+    border-radius: 5px;
+}
+
 
 button {
     font-family: 'Montserrat', sans-serif;
@@ -125,6 +134,12 @@ button {
 .date {
     color: rgb(18, 3, 56) ;
     font-weight: 600;
+}
+
+.categ {
+    color: rgb(70, 0, 247) ;
+    font-weight: 800;
+    margin-right: 5px;
 }
 
 
@@ -223,7 +238,7 @@ button {
     color: white;
     z-index: 1;
     font-weight: 600;
-    background: #f68888cf;
+    background: #102d8f;
     position: relative;
     font-size: 10px;
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
@@ -234,7 +249,7 @@ button {
 }
 
 
-.rmvAllBtn::before {
+.rmvAllBtn::after {
     content: "";
     position: absolute;
     top: 0;
@@ -250,10 +265,10 @@ button {
    }
    
 .rmvAllBtn:hover {
-    color: #a90d0d;
+    color: #102d8f;
     font-weight: 600;
    }
    
-.rmvAllBtn:hover::before {
+.rmvAllBtn:hover::after {
     width: 100%;
    }

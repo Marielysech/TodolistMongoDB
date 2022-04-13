@@ -4,6 +4,7 @@ const moment = require('moment');
 const taskSchema = new mongoose.Schema({
     action: {
         type: String,
+        required: true,
     },
 
     date: {
@@ -14,6 +15,11 @@ const taskSchema = new mongoose.Schema({
     status: {
         type: String,
         default: "todo",
+    },
+    category: {
+        type: String,
+        enum: [ "Work", "Personal", "Urgent", null ],
+        message: 'Category is not supported'    
     }
 })
 

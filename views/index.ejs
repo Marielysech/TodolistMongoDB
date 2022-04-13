@@ -20,6 +20,15 @@
     <h1 class="title">Come and create your <em class="todoWord">To-do</em>  List here</h1>
     <form action="/tasks" method="post" class="taskEntryContainer">
         <input type="text" name="action" placeholder= "Add a new task here">
+        <label for="category_Choice" class="category"></label>
+        <input list="category" id="category_Choice" name="categoryChoice" placeholder= "Choose category" class="category"/>
+
+        <datalist id="category">
+            <option value="Work">
+            <option value="Personal">
+            <option value="Urgent">
+        </datalist>
+
         <button type="submit" name="button" class="submitBtn"> Add task </button>
     </form>
     <div class="taskListContainer">
@@ -36,6 +45,9 @@
                     <span class="date">
                       <%= tasksArray[i].date%>
                     </span>
+                    <span class="categ" contenteditable="true">
+                        <%= tasksArray[i].category%>
+                      </span>
             
                     <form action="tasks/remove/<%= tasksArray[i]._id %>" method="post" class="rmvBtnDiv" >
                         <button class="removeBtn" name="delete" value="<%= tasksArray[i]._id %>" type="submit">Delete</button>

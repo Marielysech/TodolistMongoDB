@@ -4,17 +4,18 @@ const rootRoutes = require('./routes/rootRoutes');
 const path = require('path')
 const ejs = require('ejs')
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+
+dotenv.config();
 // const { use } = require('express/lib/application');
 
-const DB_SERVER = "mongodb://localhost:27017" 
-const database = "simpleUSerDB"
 
-mongoose.connect(`${DB_SERVER}/${database}`)
+mongoose.connect(process.env.DB_SERVER)
 .then(() => console.log("Connected to DB server"))
 .catch((err) => console.log(err));
 
 const app = express();
-const port = 3000
+const port = process.env.PORT
 const hostName = 'localhost'
 
 app.set('view engine', 'ejs')
